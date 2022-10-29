@@ -5,7 +5,7 @@ export const Board = styled.div`
     height: 100%;
     padding: 20px;
     background-color: #f3f3f3;
-    background-image: url('bg-dots--green.jpg');
+    background-image: url('${({ image }) => image}');
 `
 
 export const Grid = styled.div`
@@ -97,6 +97,7 @@ export const Avatar = styled.div`
     border-radius: 50px;
     background-size: 100%;
     // box-shadow: 1px 3px 10px rgb(0 0 0 / 50%);
+    background-image: url('${({ image }) => image}');
 `
 
 export const Maaike = styled(Avatar)`

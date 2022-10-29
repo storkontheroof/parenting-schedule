@@ -42,18 +42,5 @@
     },
     "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
     "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/storkontheroof/parenting-schedule.git"
-    },
-    "keywords": [
-        "parenting",
-        "schedule"
-    ],
-    "author": "Richard van den Winkel",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/storkontheroof/parenting-schedule/issues"
-    },
-    "homepage": "https://github.com/storkontheroof/parenting-schedule#readme"
+    "author": "Richard van den Winkel"
 }

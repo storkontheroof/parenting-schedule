@@ -1,102 +1,28 @@
-import * as Styled from './app.styles.js'
 import addDays from 'date-fns/addDays'
 import formatDate from 'date-fns/format'
-import * as locales from 'date-fns/locale'
 
-const startDate = new Date('2022-10-31')
-const numWeeksToShow = 4
-const locale = locales['nl']
-const bgImage = '/bg-dots--green.jpg'
-const parentOne = {
-    name: 'Maaike',
-    avatar: '/maaike.jpg',
-    days: [
-        '2022-10-31',
-        '2022-11-05',
-        '2022-11-06',
-        '2022-11-07',
-        '2022-11-12',
-        '2022-11-13',
-        '2022-11-14',
-        '2022-11-18',
-        '2022-11-19',
-        '2022-11-22',
-        '2022-11-23',
-        '2022-11-27',
-        '2022-11-28',
-        '2022-11-29',
-        '2022-11-30',
-        '2022-12-04',
-        '2022-12-05',
-        '2022-12-06',
-        '2022-12-10',
-        '2022-12-11',
-        '2022-12-12',
-        '2022-12-16',
-        '2022-12-17',
-        '2022-12-21',
-        '2022-12-22',
-        '2022-12-23',
-    ],
-}
-const parentTwo = {
-    name: 'Richard',
-    avatar: '/richard.jpg',
-    days: [
-        '2022-11-01',
-        '2022-11-02',
-        '2022-11-03',
-        '2022-11-04',
-        '2022-11-08',
-        '2022-11-09',
-        '2022-11-10',
-        '2022-11-11',
-        '2022-11-15',
-        '2022-11-16',
-        '2022-11-17',
-        '2022-11-20',
-        '2022-11-21',
-        '2022-11-24',
-        '2022-11-25',
-        '2022-11-26',
-        '2022-11-28',
-        '2022-11-29',
-        '2022-12-01',
-        '2022-12-02',
-        '2022-12-03',
-        '2022-12-04',
-        '2022-12-07',
-        '2022-12-08',
-        '2022-12-09',
-        '2022-12-13',
-        '2022-12-14',
-        '2022-12-15',
-        '2022-12-18',
-        '2022-12-19',
-        '2022-12-20',
-    ],
-}
+import * as Styled from './app.styles.js'
+import { useAppContext } from './app.state'
 
-const inDaysParentOne = (date) => {
-    return parentOne.days.includes(formatDate(date, 'yyyy-MM-dd'))
-}
-
-const inDaysParentTwo = (date) => {
-    return parentTwo.days.includes(formatDate(date, 'yyyy-MM-dd'))
+const inDays = (days, date) => {
+    return days.includes(formatDate(date, 'yyyy-MM-dd'))
 }
 
 const Avatars = ({ date }) => {
+    const {
+        state: { parentOne, parentTwo },
+    } = useAppContext()
+
+    const isInDaysParentOne = inDays(parentOne.days, date)
+    const isInDaysParentTwo = inDays(parentTwo.days, date)
+
     return (
         <Styled.Avatars>
-            {inDaysParentOne(date) && (
-                <Styled.Avatar image={parentOne.avatar} />
-            )}
+            {isInDaysParentOne && <Styled.Avatar image={parentOne.avatar} />}
 
-            {inDaysParentTwo(date) && (
-                <Styled.Avatar image={parentTwo.avatar} />
-            )}
+            {isInDaysParentTwo && <Styled.Avatar image={parentTwo.avatar} />}
 
-            {!inDaysParentOne(date) && !inDaysParentTwo(date) && (
+            {!isInDaysParentOne && !isInDaysParentTwo && (
                 <Styled.Unknown>?</Styled.Unknown>
             )}
         </Styled.Avatars>
@@ -104,6 +30,10 @@ const Avatars = ({ date }) => {
 }
 
 function App() {
+    const {
+        state: { startDate, numWeeksToShow, locale, bgImage },
+    } = useAppContext()
+
     return (
         <Styled.Board image={bgImage}>
             <Styled.Header>

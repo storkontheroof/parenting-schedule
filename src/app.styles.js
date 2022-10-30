@@ -6,6 +6,8 @@ export const Board = styled.div`
     padding: 20px;
     background-color: #f3f3f3;
     background-image: url('${({ image }) => image}');
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 export const Grid = styled.div`

@@ -4,7 +4,7 @@ import * as locales from 'date-fns/locale'
 // - Dynamic settings(e.g. personalization)
 // -
 
-export const startDate = new Date('2023-01-09')
+export const startDate = new Date('2023-02-06')
 export const numWeeksToShow = 4
 export const locale = locales['nl']
 export const bgImage = '/bg-dots--green.jpg'
@@ -12,7 +12,23 @@ export const parentOne = {
     name: 'Maaike',
     avatar: '/maaike.jpg',
     days: [
-        '2023-02-05',
+        '2023-03-28',
+        '2023-03-27',
+        '2023-03-24',
+        '2023-03-23',
+        '2023-03-22',
+        '2023-03-19',
+        '2023-03-18',
+        '2023-03-15',
+        '2023-03-14',
+        '2023-03-13',
+        '2023-03-12',
+        '2023-03-09',
+        '2023-03-08',
+        '2023-02-25',
+        '2023-02-24',
+        '2023-02-23',
+        '2023-02-22',
         '2023-02-04',
         '2023-02-03',
         '2023-02-02',
@@ -70,6 +86,19 @@ export const parentTwo = {
     name: 'Richard',
     avatar: '/richard.jpg',
     days: [
+        '2023-03-31',
+        '2023-03-30',
+        '2023-03-29',
+        '2023-03-26',
+        '2023-03-25',
+        '2023-03-21',
+        '2023-03-20',
+        '2023-03-17',
+        '2023-03-16',
+        '2023-03-11',
+        '2023-03-10',
+        '2023-03-07',
+        '2023-03-06',
         '2023-02-21',
         '2023-02-20',
         '2023-02-19',

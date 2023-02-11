@@ -24,19 +24,20 @@ export const Header = styled(Grid)`
 
 const getBackgroundColor = (variant) => {
     switch (variant) {
-        case 1: // monday
+        case 0:
             return 'LimeGreen'
-        case 2: // tuesday
+        case 1:
+            return 'Gold'
+        case 2:
             return 'Fuchsia'
-        case 3: // wednesday
+        case 3:
+            return 'Red'
+        case 4:
             return 'RoyalBlue'
-        case 4: // thursday
-            return 'FireBrick'
-        case 5: // friday
-            return 'DarkOrange'
-        case 6: // saturday
-            return 'DarkSlateBlue'
-        case 0: // sunday
+        case 5:
+            return 'LightSlateGray'
+        case 6:
+            return 'DarkSlateGray'
         default:
             return 'SaddleBrown'
     }
@@ -87,15 +88,15 @@ export const MonthName = styled.div`
 
 export const Avatars = styled.div`
     position: absolute;
-    height: 50px;
+    height: 75px;
     right: -5px;
     bottom: -7px;
 `
 export const Avatar = styled.div`
     display: inline-block;
     position: relative;
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
     border-radius: 50px;
     background-size: 100%;
     // box-shadow: 1px 3px 10px rgb(0 0 0 / 50%);
